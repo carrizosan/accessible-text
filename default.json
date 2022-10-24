@@ -1,0 +1,10 @@
+{
+  "dictionary": {
+    "$": "pesos",
+    "%": "porciento",
+    "hs": "horas",
+    "2x1": "dos por uno"
+  },
+  "propName": "default",
+  "excludes": ["def"]
+}
