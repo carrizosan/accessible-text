@@ -19,5 +19,13 @@
     "config": "^3.3.8",
     "lodash": "^4.17.21",
     "validator": "^13.7.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carrizosan/accessible-text.git"
+  },
+  "bugs": {
+    "url": "https://github.com/carrizosan/accessible-text/issues"
+  },
+  "homepage": "https://github.com/carrizosan/accessible-text#readme"
 }
