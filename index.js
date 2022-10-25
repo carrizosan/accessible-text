@@ -21,13 +21,11 @@ const ourConfigDir = path.join(__dirname, 'config')
 const baseConfig = config.util.loadFileConfigs(ourConfigDir)
 
 config.util.extendDeep(defaultConfig, baseConfig);
-config.util.setModuleDefaults('accessibility', defaultConfig);
+config.util.setModuleDefaults('config', defaultConfig);
 
-const dictionary = config.get('accessibility.dictionary');
-const excludes = config.get('accessibility.excludes');
-const accessiblePropName = config.get('accessibility.propName');
-
-console.log(defaultConfig)
+const dictionary = config.get('config.dictionary');
+const excludes = config.get('config.excludes');
+const accessiblePropName = config.get('config.propName');
 
 function applyAccessibility(objToApply) {
   const object = JSON.parse(JSON.stringify(objToApply)); // Deep copy of the param
@@ -35,7 +33,7 @@ function applyAccessibility(objToApply) {
   Object.entries(object).forEach((entry) => {
     const [key, value] = entry;
     if (key !== accessiblePropName && !excludes.includes(key)) {
-      object.accessibility[key] = evaluateValue(value);
+      object[accessiblePropName][key] = evaluateValue(value);
     }
   });
   return object;
