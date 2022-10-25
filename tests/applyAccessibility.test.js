@@ -1,6 +1,7 @@
-const {applyAccessibility, defaultConfig} = require('../index');
+const { applyAccessibility } = require('../index');
 const { objMock, objMockAccessible } = require('../mocks/objMock');
-const { benefitMock, benefitMockAccessible } = require('../mocks/benefitMock');
+const config = require('config');
+const testConfig = config.get('config');
 
 let testObj;
 
@@ -11,7 +12,7 @@ describe('Accessible object', () => {
 
   test('should be truthy obj and create accessibility property', () => {
     expect(testObj).toBeTruthy();
-    expect(testObj).toHaveProperty(defaultConfig.propName);
+    expect(testObj).toHaveProperty(testConfig.propName);
   });
 
   test('should have one more property', () => {

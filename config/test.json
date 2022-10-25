@@ -1,0 +1,11 @@
+{
+  "dictionary": {
+    "$": "pesos",
+    "%": "porciento",
+    "hs": "horas",
+    "2x1": "dos por uno",
+    "NX": "Naranja X"
+  },
+  "propName": "accessibility",
+  "excludes": []
+}

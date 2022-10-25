@@ -5,22 +5,13 @@ const validator = require('validator');
 const config = require('config');
 const path = require('path');
 
-const defaultConfig = {
-  dictionary: {
-    "$": "pesos",
-    "%": "porciento",
-    "hs": "horas",
-    "2x1": "dos por uno",
-    "asd": "asda"
-  },
-  propName: "accessibility",
-  excludes: ["sarasa"]
-}
+const defaultConfigDir = path.join(__dirname, 'config')
+const appConfigDir = config.util.getEnv('NODE_CONFIG_DIR')
 
-const ourConfigDir = path.join(__dirname, 'config')
-const baseConfig = config.util.loadFileConfigs(ourConfigDir)
+const defaultConfig = config.util.loadFileConfigs(defaultConfigDir)
+const appConfig = config.util.loadFileConfigs(appConfigDir)
 
-config.util.extendDeep(defaultConfig, baseConfig);
+config.util.extendDeep(defaultConfig, appConfig);
 config.util.setModuleDefaults('config', defaultConfig);
 
 const dictionary = config.get('config.dictionary');
@@ -107,4 +98,4 @@ function isTranslatable(stringValue) {
   );
 }
 
-module.exports = { applyAccessibility, defaultConfig };
+module.exports = { applyAccessibility };
