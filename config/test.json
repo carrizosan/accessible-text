@@ -3,8 +3,7 @@
     "$": "pesos",
     "%": "porciento",
     "hs": "horas",
-    "2x1": "dos por uno",
-    "NX": "Naranja X"
+    "2x1": "dos por uno"
   },
   "propName": "accessibility",
   "excludes": []
